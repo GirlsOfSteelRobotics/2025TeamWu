@@ -17,7 +17,8 @@ public class Chassis {
         backLeft = hm.dcMotor.get("backLeft");
         frontRight = hm.dcMotor.get("frontRight");
         backRight = hm.dcMotor.get("backRight");
-        //frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+        frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+        backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     public void drive(double x, double y, double rot) {
