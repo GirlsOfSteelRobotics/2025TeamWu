@@ -16,7 +16,7 @@ public class TeleOp extends LinearOpMode {
 
         waitForStart();
         while (opModeIsActive()) {
-            chassis.drive(gamepad1.left_stick_x, -gamepad1.left_stick_y, gamepad1.right_stick_x);
+            chassis.driveField(gamepad1.left_stick_x, -gamepad1.left_stick_y, gamepad1.right_stick_x);
             if (gamepad1.y) {
                 intake.intake();
             } else if (gamepad1.b) {
@@ -36,8 +36,11 @@ public class TeleOp extends LinearOpMode {
             if (gamepad1.dpad_down) {
                 gate.lowerGate();
             }
-
-
+            if(gamepad1.left_bumper){
+                chassis.resetIMU();
+            }
+            chassis.IMUtelemetry(telemetry);
+            telemetry.update();
         }
     }
 
