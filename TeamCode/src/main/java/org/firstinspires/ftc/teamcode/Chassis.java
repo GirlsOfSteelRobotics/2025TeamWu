@@ -33,4 +33,12 @@ public class Chassis {
         frontRight.setPower(frontRightPower);
         backRight.setPower(backRightPower);
     }
+
+    public void wheelTest(double frontLeftPower, double frontRightPower, double backLeftPower, double backRightPower){
+        frontLeft.setPower(frontLeftPower);
+        backLeft.setPower(backLeftPower);
+        frontRight.setPower(frontRightPower);
+        backRight.setPower(backRightPower);
+
+    }
 }
