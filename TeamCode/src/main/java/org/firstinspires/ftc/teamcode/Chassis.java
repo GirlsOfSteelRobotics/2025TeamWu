@@ -29,8 +29,8 @@ public class Chassis {
         backLeft = hm.dcMotor.get("backLeft");
         frontRight = hm.dcMotor.get("frontRight");
         backRight = hm.dcMotor.get("backRight");
-        frontRight.setDirection(DcMotorSimple.Direction.REVERSE);
-        backRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+        backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         imu = hm.get(IMU.class, "imu");
         imu.initialize(myIMUparameters);
     }
