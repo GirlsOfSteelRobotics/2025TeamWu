@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.acmerobotics.dashboard.FtcDashboard;
+import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 @com.qualcomm.robotcore.eventloop.opmode.TeleOp
@@ -13,6 +15,8 @@ public class TeleOp extends LinearOpMode {
         Intake intake = new Intake(hardwareMap);
         Launcher launcher = new Launcher(hardwareMap);
         Gate gate = new Gate(hardwareMap);
+
+        telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
         waitForStart();
         while (opModeIsActive()) {
@@ -39,7 +43,11 @@ public class TeleOp extends LinearOpMode {
             if(gamepad1.left_bumper){
                 chassis.resetIMU();
             }
+            if(gamepad1.dpad_up){
+                launcher.setRPM();
+            }
             chassis.IMUtelemetry(telemetry);
+            launcher.launcherTelemetry(telemetry);
             telemetry.update();
         }
     }
