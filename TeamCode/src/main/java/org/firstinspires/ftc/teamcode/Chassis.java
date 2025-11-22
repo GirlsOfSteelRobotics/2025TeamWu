@@ -88,16 +88,20 @@ public class Chassis {
     }
 
     public void goForward(int distance) {
-        setAll(DcMotor.RunMode.RUN_TO_POSITION);
-        frontLeft.setTargetPosition(frontLeft.getCurrentPosition() + distance);
-        frontLeft.setPower(1);
-        frontRight.setTargetPosition(frontRight.getCurrentPosition() + distance);
-        frontRight.setPower(1);
-        backLeft.setTargetPosition(backLeft.getCurrentPosition() + distance);
-        backLeft.setPower(1);
-        backRight.setTargetPosition(backRight.getCurrentPosition() + distance);
-        backRight.setPower(1);
 
+        frontLeft.setTargetPosition(frontLeft.getCurrentPosition() + distance);
+
+        frontRight.setTargetPosition(frontRight.getCurrentPosition() + distance);
+
+        backLeft.setTargetPosition(backLeft.getCurrentPosition() + distance);
+
+        backRight.setTargetPosition(backRight.getCurrentPosition() + distance);
+       ;
+        setAll(DcMotor.RunMode.RUN_TO_POSITION);
+        frontLeft.setPower(1);
+        frontRight.setPower(1);
+        backLeft.setPower(1);
+        backRight.setPower(1);
         while (frontLeft.isBusy()) {
 
         }
